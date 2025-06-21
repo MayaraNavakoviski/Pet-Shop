@@ -55,6 +55,10 @@ $animais = $stm->fetchAll();
             <p class="text-gray-600">Hora: <?= $animal['hora'] ?></p>
         </div>
     <?php endforeach; ?>
+
+       <a href="index.html" class="block mt-4 text-center bg-blue-900 hover:bg-blue-900/95 hover:text-gray-300 text-white font-bold py-2 px-4 rounded">
+        Voltar
+    </a>
 </body>
 </html>
 

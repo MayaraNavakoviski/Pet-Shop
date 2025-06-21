@@ -27,6 +27,7 @@ $nome = "";
 $dono = "";
 $raca = "";
 $numero = "";
+$link = "";   
 $link = "";
 $dia = "";
 $hora = "";
@@ -82,10 +83,10 @@ if (isset($_POST["nome"])) {
 
         if (count($erros) == 0) {
             // Inserir as informações na base de dados
-            $sql = "INSERT INTO Animal (nome, dono, raca, numero, dia, hora, sexo, especie, servico ) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )";
+            $sql = "INSERT INTO Animal (nome, dono, raca, numero, imagem, dia, hora, sexo, especie, servico ) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stm = $con->prepare($sql);
-            $stm->execute([$nome, $dono, $raca, $numero, $dia, $hora, $sexo, $especie, $servico]);
+            $stm->execute([$nome, $dono, $raca, $numero, $link, $dia, $hora, $sexo, $especie, $servico]);
 
             // Redirecionar para a mesma página a fim de limpar o buffer do navegador
             header("location: formulario.php");
@@ -327,7 +328,7 @@ if (isset($_POST["nome"])) {
         </div>
     </div>
 
-    <a href="index.php" class="block mt-4 text-center bg-blue-900 hover:bg-blue-900/95 hover:text-gray-300 text-white font-bold py-2 px-4 rounded">
+    <a href="index.html" class="block mt-4 text-center bg-blue-900 hover:bg-blue-900/95 hover:text-gray-300 text-white font-bold py-2 px-4 rounded">
         Voltar
     </a>
 
